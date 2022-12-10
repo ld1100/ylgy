@@ -4,14 +4,16 @@
       <div class="card-box">
         <div v-for="(item,index) in cardList" :key="index" :style="{top:item.top,left:item.left}" class="card"
              @click="cardClick(item,index,$event)">
-          <i :class="item.icon"></i>
+          <!--          <i :class="item.icon"></i>-->
+          <img :src="item.icon">
         </div>
       </div>
     </div>
     <el-row justify="center" type="flex">
       <div class="bottom">
         <div v-for="(item,index) in selectedCardList" :key="index" class="bottom-card">
-          <i :class="item.icon"></i>
+          <!--          <i :class="item.icon"></i>-->
+          <img :src="item.icon">
         </div>
       </div>
     </el-row>
@@ -52,22 +54,39 @@ export default {
       selectedCard: {},
       selectedCardList: [],
       selectedHistory: [],
+      // iconList: [
+      //   { picIndex: 0, icon: 'el-icon-food' },
+      //   { picIndex: 1, icon: 'el-icon-chicken' },
+      //   { picIndex: 2, icon: 'el-icon-tableware' },
+      //   { picIndex: 3, icon: 'el-icon-burger' },
+      //   { picIndex: 4, icon: 'el-icon-ice-cream' },
+      //   { picIndex: 5, icon: 'el-icon-cold-drink' },
+      //   { picIndex: 6, icon: 'el-icon-grape' },
+      //   { picIndex: 7, icon: 'el-icon-watermelon' },
+      //   { picIndex: 8, icon: 'el-icon-cherry' },
+      //   { picIndex: 9, icon: 'el-icon-apple' },
+      //   { picIndex: 10, icon: 'el-icon-orange' },
+      //   { picIndex: 11, icon: 'el-icon-pear' },
+      //   { picIndex: 12, icon: 'el-icon-potato-strips' },
+      //   { picIndex: 13, icon: 'el-icon-lollipop' },
+      //   { picIndex: 14, icon: 'el-icon-ice-cream-square' }
+      // ],  // 图标类型数组
       iconList: [
-        { picIndex: 0, icon: 'el-icon-food' },
-        { picIndex: 1, icon: 'el-icon-chicken' },
-        { picIndex: 2, icon: 'el-icon-tableware' },
-        { picIndex: 3, icon: 'el-icon-burger' },
-        { picIndex: 4, icon: 'el-icon-ice-cream' },
-        { picIndex: 5, icon: 'el-icon-cold-drink' },
-        { picIndex: 6, icon: 'el-icon-grape' },
-        { picIndex: 7, icon: 'el-icon-watermelon' },
-        { picIndex: 8, icon: 'el-icon-cherry' },
-        { picIndex: 9, icon: 'el-icon-apple' },
-        { picIndex: 10, icon: 'el-icon-orange' },
-        { picIndex: 11, icon: 'el-icon-pear' },
-        { picIndex: 12, icon: 'el-icon-potato-strips' },
-        { picIndex: 13, icon: 'el-icon-lollipop' },
-        { picIndex: 14, icon: 'el-icon-ice-cream-square' }
+        { picIndex: 0, icon: require('@/assets/images/企鹅.png') },
+        { picIndex: 1, icon: require('@/assets/images/刺猬.png') },
+        { picIndex: 2, icon: require('@/assets/images/猫头鹰.png') },
+        { picIndex: 3, icon: require('@/assets/images/小狗.png') },
+        { picIndex: 4, icon: require('@/assets/images/小狐狸.png') },
+        { picIndex: 5, icon: require('@/assets/images/小羊.png') },
+        { picIndex: 6, icon: require('@/assets/images/青蛙.png') },
+        { picIndex: 7, icon: require('@/assets/images/小鸭子.png') },
+        { picIndex: 8, icon: require('@/assets/images/河豚.png') },
+        { picIndex: 9, icon: require('@/assets/images/水獭.png') },
+        { picIndex: 10, icon: require('@/assets/images/狮子.png') },
+        { picIndex: 11, icon: require('@/assets/images/小老虎.png') },
+        { picIndex: 12, icon: require('@/assets/images/小猫咪.png') },
+        { picIndex: 13, icon: require('@/assets/images/小兔子.png') },
+        { picIndex: 14, icon: require('@/assets/images/羊驼.png') }
       ],  // 图标类型数组
       dialogVisible: false,
       currentDifficulty: 'primary',
@@ -262,13 +281,18 @@ export default {
     border: 1px solid #cccccc;
     box-shadow: 0 0 5px 0 #b6b5b5;
     position: absolute;
-    background-color: #f8f4e7;
+    background-color: #FFFFFF;
     font-size: 36px;
     cursor: pointer;
+    padding-top: 5px;
+
+    img {
+      max-height: 85%;
+    }
   }
 }
 
-.el-icon-food {
+/*.el-icon-food {
   color: #022459;
 }
 
@@ -326,7 +350,7 @@ export default {
 
 .el-icon-ice-cream-square {
   color: #0bbde5;
-}
+}*/
 
 
 .bottom {
@@ -344,9 +368,14 @@ export default {
     line-height: 50px;
     border: 1px solid #FFFFFF;
     box-shadow: 0 0 5px 0 #777676;
-    background-color: #f8f4e7;
+    background-color: #FFFFFF;
     font-size: 36px;
     cursor: pointer;
+    padding-top: 5px;
+
+    img {
+      max-height: 85%;
+    }
   }
 }
 
